@@ -1,5 +1,4 @@
 <?php
-	require_once dirname(__FILE__) . "/../a2billing/common/lib/Class.SOAP-function.php";
 	
 	// iOS URL
 	$username = $_GET["u"];
@@ -15,9 +14,6 @@
 	if ($version == "")
 		$version = $_GET["version"];
 
-	// A2Billing
-	$key = md5(API_SECURITY_KEY);
-	$ws = new SOAP_A2Billing();
 
 	// 1. Validating of the username and password
 
