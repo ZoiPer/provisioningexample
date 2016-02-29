@@ -1,5 +1,13 @@
 <?php
 	
+	function ver_to_int($ver) {
+		$arr = explode('.', $ver);
+		$f = (int) $arr[0];
+		$s = (int) $arr[1];
+		return $f * 10000 + $s;
+	}
+
+
 	// iOS URL
 	$username = $_GET["u"];
 	if ($username == "") 
@@ -26,7 +34,7 @@
 		
 		$secret = $result[0];
 
-		if ($secret == $password && $version == null || $version == "1.0") {
+		if ($secret == $password && $version == null || ver_to_int($version) === ver_to_int("1.0") ) {
 
 			// 2. If the credentials are correct and the version is 1.0 or doesn't persist send the following config
 
