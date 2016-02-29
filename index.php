@@ -105,7 +105,7 @@
 			echo $xml->saveXML($xml, LIBXML_NOEMPTYTAG);
 		} 
 	
-		elseif ($secret == $password && $version > "1.0") {
+		elseif ($secret == $password && ver_to_int($version) > ver_to_int("1.0") ) {
 
 			// 3. If the credentials are correct and the version is greater than 1.0 send the following config
 
@@ -331,7 +331,7 @@
 			$element = $xml->createAttribute("IAX2_callerNumber", "");
 			$account->appendChild($element);
 			
-			$element = $xml->createAttribute("IAX2_dtmf_style", 0);
+			$element = $xml->createAttribute("IAX2_dtmf_style", "");
 			$account->appendChild($element);
 			
 			$msrp = $xml->createAttribute("msrp");
