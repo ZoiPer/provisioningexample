@@ -1,42 +1,34 @@
 <?php
 	
-	function ver_to_int($ver) {
-		$arr = explode('.', $ver);
-		$f = (int) $arr[0];
-		$s = (int) $arr[1];
-		return $f * 10000 + $s;
+	require("config.php");
+	require("functions.php");
+
+
+	if (!isset($_GET["u"])) 
+		error('No username');
+	$username = $_GET["u"];
+	
+	if (!isset($_GET["p"])) 
+		error('No password');
+	$password = $_GET["p"];
+	
+	if (!isset($_GET["v"]))  {
+		$version = '1.0';
+	} else {
+		$version = $_GET["v"];
 	}
 
 
-	// iOS URL
-	$username = $_GET["u"];
-	if ($username == "") 
-		$username = $_GET["username"];
-	
+	// 1. Check the username and password
 
-	$password = $_GET["p"];
-	if ($password == "")
-		$password = $_GET["password"];
+	$res = validate_user($username, $password);
 
-	$version = $_GET["v"]; //Put isset for the version
-	if ($version == "")
-		$version = $_GET["version"];
+	if (!$res)
+		error("Wrong username or password");
 
+		if (ver_to_int($version) === ver_to_int("1.0") ) {
 
-	// 1. Validating of the username and password
-
-	$result = $ws->Get_Account_Attribute($key, "uipass", $username);
-
-	$status = $result[1];
-
-	if ($status == "Get_Account_Attribute SUCCESS") {
-
-		
-		$secret = $result[0];
-
-		if ($secret == $password && $version == null || ver_to_int($version) === ver_to_int("1.0") ) {
-
-			// 2. If the credentials are correct and the version is 1.0 or doesn't persist send the following config
+			// 2. If the credentials are correct and the version is 1.0 send the following config
 
 			$xml = new DOMDocument("1.0", "UTF-8");
 
@@ -45,21 +37,17 @@
 			$account = $xml->createElement("account");
 			$element = $xml->createElement("username", $username);
 			$account->appendChild($element);
-			if ($so == "ios")
-			{
-				$element = $xml->createElement("password", $password);
-				$account->appendChild($element);
-			}
+			$element = $xml->createElement("password", $password);
+			$account->appendChild($element);	
 			$element = $xml->createElement("tech", 0);
 			$account->appendChild($element);
-			$element = $xml->createElement("host", "");
+			$element = $xml->createElement("host", SIP_DOMAIN);
 			$account->appendChild($element);
 			$element = $xml->createElement("port", "5060");
 			$account->appendChild($element);
-			if ($so == "android")
-				$element = $xml->createElement("outbound_proxy", 0);
-			else
-				$element = $xml->createElement("use_outbound_proxy", 0);
+			$element = $xml->createElement("outbound_proxy", 0);
+			$account->appendChild($element);
+			$element = $xml->createElement("use_outbound_proxy", 0);
 			$account->appendChild($element);
 			$element = $xml->createElement("outbound_proxy_port", "5060");
 			$account->appendChild($element);
@@ -105,23 +93,26 @@
 			echo $xml->saveXML($xml, LIBXML_NOEMPTYTAG);
 		} 
 	
-		elseif ($secret == $password && ver_to_int($version) > ver_to_int("1.0") ) {
+		elseif (ver_to_int($version) > ver_to_int("1.0") ) {
 
-			// 3. If the credentials are correct and the version is greater than 1.0 send the following config
+		// 3. If the credentials are correct and the version is greater than 1.0 send the following config
 
 			$xml = new DOMDocument("1.0", "UTF-8");
 
 			$options = $xml->createElement("options");
-			$prov_version = $xml->createElement("prov_version");
-			$customer_sid = $xml->createElement("customer_sid");
-			$prov_id = $xml->createElement("prov_id");
-			$prov_name = $xml->createElement ("prov_name");
+			$element = $xml->createElement("prov_version");
+			$element = $xml->createElement("customer_sid");
+			$element = $xml->createElement("prov_id");
+			$element = $xml->createElement ("prov_name");
 			$accounts = $xml->createElement("accounts");
 			$account = $xml->createElement("account");
-			$ident = $xml->createElement("ident");
-			$name = $xml->createElement("name");
-			$username = $xml->createElement("username", $username);
-			$password = $xml->createElement("password", $password);
+			$element = $xml->createElement("ident");
+			$account->appendChild($element);
+			$element = $xml->createElement("name");
+			$account->appendChild($element);
+			$element = $xml->createElement("username", $username);
+			$account->appendChild($element);
+			$element = $xml->createElement("password", $password);
 			$element = $xml->createElement("tech", 0);
 			$account->appendChild($element);
 						
@@ -172,7 +163,7 @@
 			Optional enables kpml.*/
 	
 			$element = $xml->createElement("use_kpml", true);
-		$account->appendChild($element);
+			$account->appendChild($element);
 			
 
 			/*Possible values: true, false
@@ -276,24 +267,21 @@
 
 			Optional.*/
 			
-			$element = $xml->createAttribute("balance_url", "https://example.com/script.php?username=${USERNAME}&amp;password=$
-{PASSWORD}&amp;currency=${CURRENCY}");
+			$element = $xml->createAttribute("balance_url", "https://example.com/script.php?username=${USERNAME}&amp;password=${PASSWORD}&amp;currency=${CURRENCY}");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional.*/
 			
-			$element = $xml->createAttribute("rate_url", "https://example.com/script.php?destination=${DESTINATION}&amp;currency=$
-{CURRENCY}&amp;username=${USERNAME}&amp;password=${PASSWORD}");
+			$element = $xml->createAttribute("rate_url", "https://example.com/script.php?destination=${DESTINATION}&amp;currency=${CURRENCY}&amp;username=${USERNAME}&amp;password=${PASSWORD}");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional.*/
 			
-			$element = $xml->createAttribute("quality_rating_url", "https://example.com/script.php?id=${CALL_IDENTIFIER}&amp;rating=$
-{RATING}");
+			$element = $xml->createAttribute("quality_rating_url", "https://example.com/script.php?id=${CALL_IDENTIFIER}&amp;rating=${RATING}");
 			$account->appendChild($element);
 			
 			/*Possible values: SIP, IAX2, XMPP, RTSP
@@ -311,6 +299,7 @@
 			try to refresh it after 90% of the negotiated time has elapsed.*/
 			
 			$element = $xml->createAttribute("registration_mode", "default");
+			$account->appendChild($element);
 	
 			/*Possible values: unsigned long
 			
@@ -337,7 +326,7 @@
 
 			Configures the user domain.*/
 			
-			$element = $xml->createElement("SIP_domain", "");
+			$element = $xml->createElement("SIP_domain", SIP_DOMAIN);
 			$account->appendChild($element);
 			
 			/*Possible values: true, false
@@ -673,9 +662,12 @@
 
 			$element = $xml->createElement("vbr", 0);
 			$codec->appendChild($element);
+
 			$codecs->appendChild($codec);
-			$options->appendChild($codecs);
-			$xml->appendChild($options);
+
+			$accounts->appendChild($codecs);
+
+			$options->appendChild($accounts);
 			
 			$diagnostics = $xml->createElement("diagnostics");
 			
@@ -702,11 +694,11 @@
 			
 			$options->appendChild($diagnostics);
 			
+			$xml->appendChild($options);
+
 			echo $xml->saveXML($xml, LIBXML_NOEMPTYTAG);
 		} else {
-			echo "<error>Wrong username or password.</error>";
+			error("Unknown version");
 		}
-	}
-	else
-		echo "<error>Wrong username or password.</error>";
+
 ?>
