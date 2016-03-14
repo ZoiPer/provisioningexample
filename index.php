@@ -184,111 +184,111 @@
 
 			Optional custom ring-tone uri*/
 			
-			$element = $xml->createAttribute("custom_ringtone_location", "");
+			$element = $xml->createElement("custom_ringtone_location", "");
 			$account->appendChild($element);
 
 			/*Possible values: none, common, location, configuration, self_signed
 
 			Optional custom certificate usage.*/
 			
-			$element = $xml->createAttribute("use_custom_certificate", "");
+			$element = $xml->createElement("use_custom_certificate", "");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional custom certificate uri.*/
 			
-			$element = $xml->createAttribute("custom_certificate_location", "");
+			$element = $xml->createElement("custom_certificate_location", "");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional custom certificate data.*/
 			
-			$element = $xml->createAttribute("custom_certificate", "");
+			$element = $xml->createElement("custom_certificate", "");
 			$account->appendChild($element);
 
 			/*Possible values: disabled, before, after, both
 
 			Optional message waiting indication subscription.*/ 
 			
-			$element = $xml->createAttribute("mwi_subscribe_usage", "disabled");
+			$element = $xml->createElement("mwi_subscribe_usage", "disabled");
 			$account->appendChild($element);
 			
 			/*Possible values: true, false
 
 			Optional enables number rewriting.*/
 
-			$element = $xml->createAttribute("use_number_rewriting", true);
+			$element = $xml->createElement("use_number_rewriting", true);
 			$account->appendChild($element);
 
 			/*Possible values: string, auto-detect
 
 			Optional specifies country code to be applied to numbers without such one.*/ 
 			
-			$element = $xml->createAttribute("number_rewriting_country", "");
+			$element = $xml->createElement("number_rewriting_country", "");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional enables number rewriting with custom dialout prefix.*/
 			
-			$element = $xml->createAttribute("number_rewriting_prefix", "");
+			$element = $xml->createElement("number_rewriting_prefix", "");
 			$account->appendChild($element);
 
 			/*Possible values: true, false
 
 			Optional enables the striping of characters from the dial string.*/
 			
-			$element = $xml->createAttribute("use_strip_dial_chars", true);
+			$element = $xml->createElement("use_strip_dial_chars", true);
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional. The characters that going to be stripped from the dial string.*/
 			
-			$element = $xml->createAttribute("strip_dial_chars", ".- ()[]{}");
+			$element = $xml->createElement("strip_dial_chars", ".- ()[]{}");
 			$account->appendChild($element);
 			
 			/*Possible values: string
 
 			Optional.*/
 
-			$element = $xml->createAttribute("token", "");
+			$element = $xml->createElement("token", "");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional.*/
 			
-			$element =$xml->createAttribute("token_url", "");
+			$element =$xml->createElement("token_url", "");
 
 			/*Possible values: string
 
 			Optional.*/
 			
-			$element = $xml->createAttribute("balance_url", "https://example.com/script.php?username=${USERNAME}&amp;password=${PASSWORD}&amp;currency=${CURRENCY}");
+			$element = $xml->createElement("balance_url", "https://example.com/script.php?username=${USERNAME}&amp;password=${PASSWORD}&amp;currency=${CURRENCY}");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional.*/
 			
-			$element = $xml->createAttribute("rate_url", "https://example.com/script.php?destination=${DESTINATION}&amp;currency=${CURRENCY}&amp;username=${USERNAME}&amp;password=${PASSWORD}");
+			$element = $xml->createElement("rate_url", "https://example.com/script.php?destination=${DESTINATION}&amp;currency=${CURRENCY}&amp;username=${USERNAME}&amp;password=${PASSWORD}");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional.*/
 			
-			$element = $xml->createAttribute("quality_rating_url", "https://example.com/script.php?id=${CALL_IDENTIFIER}&amp;rating=${RATING}");
+			$element = $xml->createElement("quality_rating_url", "https://example.com/script.php?id=${CALL_IDENTIFIER}&amp;rating=${RATING}");
 			$account->appendChild($element);
 			
 			/*Possible values: SIP, IAX2, XMPP, RTSP
 			
 			Protocol. Controls the presence of configuration blocks: SIP, IAX2*/
 			
-			$element = $xml->createAttribute("protocol", "SIP");
+			$element = $xml->createElement("protocol", "SIP");
 			$account->appendChild($element);
 
 			/*Possible values: default, custom
@@ -298,7 +298,7 @@
 			will not wait for the full period to refresh the registration. It will
 			try to refresh it after 90% of the negotiated time has elapsed.*/
 			
-			$element = $xml->createAttribute("registration_mode", "default");
+			$element = $xml->createElement("registration_mode", "default");
 			$account->appendChild($element);
 	
 			/*Possible values: unsigned long
@@ -312,14 +312,14 @@
 
 			The default subscription refresh should be 1800s for TCP and UDP.*/
 			
-			$element = $xml->createAttribute("resubscription_mode", "default");
+			$element = $xml->createElement("resubscription_mode", "default");
 			$account->appendChild($element);
 
 			/*Possible values: unsigned long
 
 			Optional.*/
 			
-			$element = $xml->createAttribute("resubscription_time", "1800");
+			$element = $xml->createElement("resubscription_time", "1800");
 			$account->appendChild($element);
 			
 			/*Possible values: string
@@ -354,21 +354,21 @@
 
 			Optional use authentication username.*/
 	
-			$element = $xml->createAttribute("SIP_use_auth_username", true);
+			$element = $xml->createElement("SIP_use_auth_username", true);
 			$account->appendChild($element);
 	
 			/*Possible values: string
 
 			Optional username to be used when repsonding to a SIP authentication challenge.*/
 		
-			$element = $xml->createAttribute("SIP_auth_username", "");
+			$element = $xml->createElement("SIP_auth_username", "");
 			$account->appendChild($element);
 
 			/*Possible values: string
 
 			Optional display name.*/
 			
-			$element = $xml->createAttribute("SIP_callerid", "");
+			$element = $xml->createElement("SIP_callerid", "");
 			$account->appendChild($element);
 			
 			/*Possible values: true, false
@@ -377,7 +377,7 @@
 			there is a NAT between the user and the server. It also helps for normal
 			unfirewalled TCP and TLS connections (highly recommended for these two protocols).*/
 
-			$element = $xml->createAttribute("SIP_use_rport", true);
+			$element = $xml->createElement("SIP_use_rport", true);
 			$account->appendChild($element);
 
 			/*Possible values: true, false
@@ -389,110 +389,110 @@
 			This option is not recommended. Enable it only if you absolutely know
 			what you're doing.*/
 			
-			$element = $xml->createAttribute("SIP_use_rport_media", false);
+			$element = $xml->createElement("SIP_use_rport_media", false);
 			$account->appendChild($element);
 
 			/*Possible values: none, SDES
 
 			Select the user's SRTP mode.*/
 
-			$element = $xml->createAttribute("SIP_srtp_mode", "none");
+			$element = $xml->createElement("SIP_srtp_mode", "none");
 			$account->appendChild($element);
 			
 			/*Possible values: inband, rfc+2833, SIP_info_numeric, SIP_info_ascii, disabled
 
 			Select the DTMF band for the user.*/
 
-			$element = $xml->createAttribute("SIP_dtmf_style", "rfc_2833");
+			$element = $xml->createElement("SIP_dtmf_style", "rfc_2833");
 			$account->appendChild($element);
 
 			/*Possible values: true, false
 			
 			Optional enable busy line field.*/
 
-			$element = $xml->createAttribute("SIP_use_blf", true);
+			$element = $xml->createElement("SIP_use_blf", true);
 			$account->appendChild($element);
 
 			/*Possible values: true, false
 
 			Optional publish user presence.*/
 			
-			$element = $xml->createAttribute("SIP_publish_presence", true);
+			$element = $xml->createElement("SIP_publish_presence", true);
 			$account->appendChild($element);
 
 			/*Possible values: true, false
 
 			Optional subscribe for other users presence.*/
 			
-			$element = $xml->createAttribute("SIP_subscribe_presence", true);
+			$element = $xml->createElement("SIP_subscribe_presence", true);
 			$account->appendChild($element);
 			
 			/*Possible values: disabled, default, custom
 
 			Optional.*/
 
-			$element = $xml->createAttribute("SIP_keep_alive_mode", "disabled");
+			$element = $xml->createElement("SIP_keep_alive_mode", "disabled");
 			$account->appendChild($element);
 				
 			/*Possible values: unsigned long
 
 			Optional.*/
 		
-			$element = $xml->createAttribute("SIP_keep_alive_timeout", 90);
+			$element = $xml->createElement("SIP_keep_alive_timeout", 90);
 			$account->appendChild($element);
 			
 			/*Possible values: string
 			
 			The Jabber Id of the user.*/
 
-			$element = $xml->createAttribute("XMPP_Jid", "");
+			$element = $xml->createElement("XMPP_Jid", "");
 			$account->appendChild($element);
 			
 			/*Possible values: string
 			
 			Optional full name of the XMPP user.*/
 
-			$element = $xml->createAttribute("XMPP_name", "");
+			$element = $xml->createElement("XMPP_name", "");
 			$account->appendChild($element);
 			
 			/*Possible values: string
 
 			Optional XMPP connect server.*/
 
-			$element = $xml->createAttribute("XMPP_server", "");
+			$element = $xml->createElement("XMPP_server", "");
 			$account->appendChild($element);
 
 			/*Possible values: true, false
 
 			It governs the usage of the legacy TLS mode for XMPP.*/
 			
-			$element = $xml->createAttribute("XMPP_legacy_tls", false);
+			$element = $xml->createElement("XMPP_legacy_tls", false);
 			$account->appendChild($element);
 
 			// stun holds stun related settings.
 			
-			$stun = $xml->createAttribute("stun");
+			$stun = $xml->createElement("stun");
 			
 			/*Possible values: disabled, custom, default
 
 			In most cases only disabled and custom are used
 			Controls the use of STUN.*/
 
-			$element = $xml->createAttribute("use_stun", "custom");
+			$element = $xml->createElement("use_stun", "custom");
 			$stun->appendChild($element);
 
 			/*Possible values: string
 			
 			Configures the address of the STUN server.*/
 										
-			$element = $xml->createAttribute("stun_host", "");
+			$element = $xml->createElement("stun_host", "");
 			$stun->appendChild($element);
 
 			/*Possible values: unsigned int
 			
 			Configures the port of the STUN server.*/
 											
-			$element = $xml->createAttribute("stun_port", 3478);
+			$element = $xml->createElement("stun_port", 3478);
 			$stun->appendChild($element);
 
 			/*Possible values: unsigned int
@@ -502,7 +502,7 @@
 			The default is 30 seconds. The refresh can be used to keep the
 			NAT mapping alive.*/
 			
-			$element = $xml->createAttribute("stun_refresh_period", 40);
+			$element = $xml->createElement("stun_refresh_period", 40);
 			$stun->appendChild($element);
 															
 			$account->appendChild($stun);
@@ -511,88 +511,88 @@
 
 			Configures the server address.*/
 								
-			$element = $xml->createAttribute("IAX2_host", "");
+			$element = $xml->createElement("IAX2_host", "");
 			$account->appendChild($element);
 			
 			/*Possible values: string
 			
 			Configures the context to be used.*/
 
-			$element = $xml->createAttribute("IAX2_context", "");
+			$element = $xml->createElement("IAX2_context", "");
 			$account->appendChild($element);
 			
 			/*Possible values: string
 
 			Optional the display name.*/
 
-			$element = $xml->createAttribute("IAX2_callerid", "");
+			$element = $xml->createElement("IAX2_callerid", "");
 			$account->appendChild($element);
 			
 			/*Possible values: string
 			
 			Configures the user name used for identification.*/
 
-			$element = $xml->createAttribute("IAX2_callerNumber", "");
+			$element = $xml->createElement("IAX2_callerNumber", "");
 			$account->appendChild($element);
 
 			/*Possible values: inband, disabled, outband
 			
 			Select the DTMF band for the user.*/
 			
-			$element = $xml->createAttribute("IAX2_dtmf_style", "");
+			$element = $xml->createElement("IAX2_dtmf_style", "");
 			$account->appendChild($element);
 			
 			/*msrp holds msrp related settings.*/
 
-			$msrp = $xml->createAttribute("msrp");
+			$msrp = $xml->createElement("msrp");
 			
 			/*Possible values: true, false
 			
 			Enable msrp for the user.*/
 
-			$element = $xml->createAttribute("enable_msrp", true);
+			$element = $xml->createElement("enable_msrp", true);
 			$msrp->appendChild($element);
 			
 			/*Possible values: true, false
 
 			Enable file transfer for the user.*/
 
-			$element = $xml->createAttribute("enable_file_transfer", true);
+			$element = $xml->createElement("enable_file_transfer", true);
 			$msrp->appendChild($element);
 			
 			/*Possible values: true, false
 
 			ce user to use msrp for chat messages.*/
 
-			$element = $xml->createAttribute("force_msrp_for_chat", true);
+			$element = $xml->createElement("force_msrp_for_chat", true);
 			$msrp->appendChild($element);
 			
 			/*Possible values: true, false
 
 			ble msrp relay for the user.*/
 
-			$element = $xml->createAttribute("enable_msrp_relay", true);
+			$element = $xml->createElement("enable_msrp_relay", true);
 			$msrp->appendChild($element);
 
 			/*Possible values: string
 
 			MSRP relay uri.*/
 
-			$element = $xml->createAttribute("relay_uri", "");
+			$element = $xml->createElement("relay_uri", "");
 			$msrp->appendChild($element);
 
 			/*Possible values: string
 
 			Msrp relay username.*/
 
-			$element = $xml->createAttribute("relay_username", "");
+			$element = $xml->createElement("relay_username", "");
 			$msrp->appendChild($element);
 			
 			/*Possible values: string
 	
 			MSRP relay password.*/
 
-			$element = $xml->createAttribute("relay_password", "");
+			$element = $xml->createElement("relay_password", "");
 			$msrp->appendChild($element);
 						
 			$account->appendChild($msrp);
@@ -675,21 +675,21 @@
 
 			Optional enables the debug logging into a file.*/
 
-			$element = $xml->createAttribute("enable_debug_log", false);
+			$element = $xml->createElement("enable_debug_log", false);
 			$diagnostics->appendChild($element);
 			
 			/*Possible values: true, false
 
 			Optional enables the extended crash dump file. Avialable only on Windows.*/
 
-			$element = $xml->createAttribute("enable_extra_dmp", false);
+			$element = $xml->createElement("enable_extra_dmp", false);
 			$diagnostics->appendChild($element);
 
 			/*Possible values: true, false
 
 			Optional enables the audio log files.*/
 
-			$element = $xml->createAttribute("enable_audio_debug", false);
+			$element = $xml->createElement("enable_audio_debug", false);
 			$diagnostics->appendChild($element);
 			
 			$options->appendChild($diagnostics);

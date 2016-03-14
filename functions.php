@@ -20,8 +20,8 @@
 	*/
 
 	function validate_user($username, $password) {
-		$secretpass = "verysecret";
 		$secretuser = "secretuser";
+		$secretpass = "verysecret";
 		if ($username != $secretuser || $password != $secretpass)
 			return false;
 		
