@@ -31,3 +31,20 @@
 
 		return $tmp;
 	}
+
+	/*
+	  This function returns string with escaped special XML symbols.
+	  It is mainly used for the properly passing of the URL for balance,
+	  rate and call quality rating.
+	*/
+
+	function xml_url ($string) {
+		$sym = array(
+			"<" => "&lt;",
+			">" => "&gt;",
+			'"' => "&quot;",
+			"'" => "&apos;",
+			"&" => "&amp;",
+		);		
+		return strtr($string, $sym);
+	}
