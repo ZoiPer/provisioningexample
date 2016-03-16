@@ -715,18 +715,338 @@
 			6 - aLaw
 			7 - g722
 			16 - g729
-			24 - Speex
+			24 - Speex narrow
 			25 - Speex wide
 			26 - Speex ultra
 			27 - iLBC30
+			28 - iLBC20
 			29 - g726
-			30 - H263 Plus
 			31 - VP8
 			34 - Opus narrow
 			35 - Opus wide
 			36 - Opus super
 			37 - Opus full
 		*/
+
+		$element = $xml->createElement("codec_id", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 1);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 1);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 2);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 6);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 3);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 7);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 4);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 16);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 5);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 24);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 6);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 25);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 7);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 26);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 8);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
 
 		$element = $xml->createElement("codec_id", 27);
 		$codec->appendChild($element);
@@ -735,7 +1055,367 @@
 
 		Codec priority in media negotiations.*/
 
-		$element = $xml->createElement("priority", 1);
+		$element = $xml->createElement("priority", 9);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 27);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 10);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 28);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 11);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 29);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 12);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 31);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 13);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 32);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 14);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 34);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 15);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 35);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 16);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 36);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 17);
+		$codec->appendChild($element);
+
+		/* Possible values: true, false
+
+		Controls if the codec is enabled*/
+
+		$element = $xml->createElement("enabled", true);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("bps", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("dtx", 0);
+		$codec->appendChild($element);
+
+		/* Possible values: long
+
+		Optional.*/
+
+		$element = $xml->createElement("vbr", 0);
+		$codec->appendChild($element);
+
+		$codecs->appendChild($codec);
+
+		$element = $xml->createElement("codec_id", 37);
+		$codec->appendChild($element);
+
+		/* Possible values: unsigned int
+
+		Codec priority in media negotiations.*/
+
+		$element = $xml->createElement("priority", 18);
 		$codec->appendChild($element);
 
 		/* Possible values: true, false
