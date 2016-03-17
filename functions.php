@@ -1,4 +1,26 @@
 <?php
+
+/* List of all codecs and their ids*/
+$codec_ids = array(
+'uLaw' => 0,
+'GSM' => 1,
+'aLaw' => 6,
+'g722' => 7,
+'g729' => 16,
+'Speex narrow' => 24,
+'Speex wide' => 25,
+'Speex ultra' => 26,
+'iLBC30' => 27,
+'iLBC20' => 28,
+'g726' => 29,
+'VP8' => 31,
+'H.264' => 32,
+'Opus narrow' => 34,
+'Opus wide' => 35,
+'Opus super' => 36,
+'Opus full' => 37
+};
+
 	function ver_to_int($ver) {
 		$arr = explode('.', $ver);
 		$f = (int) $arr[0];
