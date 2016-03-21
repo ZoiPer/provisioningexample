@@ -722,11 +722,13 @@
 			28 - iLBC20
 			29 - g726
 			31 - VP8
+			32 - H264
 			34 - Opus narrow
 			35 - Opus wide
 			36 - Opus super
 			37 - Opus full
 		*/
+
 		$prio = 1;
 		foreach ($permitcodecs as $c => $p) {
 
