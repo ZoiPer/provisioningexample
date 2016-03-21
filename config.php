@@ -32,11 +32,7 @@ Please note that the codecs listed below are just for an example. You would have
 If you do not set an option for a specific codec, the default will be used.*/
 
 $permitcodecs = array(
-	'GSM' => array(
-		'bps' => 13200,
-		'dtx' => 0,
-		'vbr' => 0
-	),
+	'GSM' => array(),
 	'VP8' => array(
 		'bps' => 128000,
 		'dtx' => 1,

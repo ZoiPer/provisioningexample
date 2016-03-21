@@ -703,10 +703,6 @@
 
 		$codecs = $xml->createElement("codecs");
 
-		/* Codec contains a codec id, name, priority and if it is enabled. */
-
-		$codec = $xml->createElement("codec");
-
 		/*Possible values: unsigned int
 			Internal codec id
 			Current list:
@@ -732,10 +728,14 @@
 		$prio = 1;
 		foreach ($permitcodecs as $c => $p) {
 
-			if (empty($codecs[$cid]))
+			/* Codec contains a codec id, name, priority and if it is enabled. */
+
+			$codec = $xml->createElement("codec");
+
+			if (empty($codec_ids[$c]))
 				continue; /* unknown codec */
 
-			$cid = $codecs[$c];
+			$cid = $codec_ids[$c];
 			
 			$element = $xml->createElement("codec_id", $cid);
 			$codec->appendChild($element);
