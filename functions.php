@@ -19,7 +19,7 @@ $codec_ids = array(
 'Opus wide' => 35,
 'Opus super' => 36,
 'Opus full' => 37
-};
+);
 
 	function ver_to_int($ver) {
 		$arr = explode('.', $ver);
