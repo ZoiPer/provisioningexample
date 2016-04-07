@@ -791,7 +791,7 @@
 
 		/* Possible values: true, false
 
-		Optional enables the extended crash dump file. Avialable only on Windows.*/
+		Optional enables the extended crash dump file. Available only on Windows.*/
 
 		$element = $xml->createElement("enable_extra_dmp", false);
 		$diagnostics->appendChild($element);
