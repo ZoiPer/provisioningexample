@@ -162,7 +162,7 @@
 
 		Account display name.*/
 
-		$element = $xml->createElement("name");
+		$element = $xml->createElement("name", "Account1");
 		$account->appendChild($element);
 
 		/* Possible values: string,
