@@ -697,6 +697,31 @@
 
 		$account->appendChild($msrp);
 
+		$sms = $xml->createElement("sms");
+
+		/* Possible values: true, false
+
+		Enables SMS for the user.*/
+
+		$element = $xml->createElement("enabled", false);
+		$sms->appendChild($element);
+
+		/* Possible values: true, false
+
+		Enables SMS center for the user.*/
+
+		$element = $xml->createElement("enable_sms_center", false);
+		$sms->appendChild($element);
+
+		/* Possible values: string
+
+		SMS center uri.*/
+
+		$element = $xml->createElement("sms_center_uri", "");
+		$sms->appendChild($element);
+
+		$account->appendChild($sms);
+
 		/* Codecs holds codec nodes for each supported codec for that.
 
                 Only one per provisioning xml.*/
