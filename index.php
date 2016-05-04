@@ -1001,7 +1001,7 @@
 
 		$zrtp->appendChild($sas_encodings);
 
-		$options->appendChild($zrtp);
+		$account->appendChild($zrtp);
 
 		$accounts->appendChild($account);
 
@@ -1036,28 +1036,28 @@
 
 		$options->appendChild($diagnostics);
 
-		$diagnostics = $xml->createElement("breakpad");
+		$breakpad = $xml->createElement("breakpad");
 
 		/* Possible values: true, false
 
 		Optional enables breakpad.*/
 
 		$element = $xml->createElement("enabled", true);
-		$diagnostics->appendChild($element);
+		$breakpad->appendChild($element);
 
 		/* Possible values: true, false
 
 		Optional enables automatic breakpad dumps sending*/
 
 		$element = $xml->createElement("upload_dumps", true);
-		$diagnostics->appendChild($element);
+		$breakpad->appendChild($element);
 
 		/* Possible values: true, false
 
 		Optional enables the ability to ask the user for breakpad dumps sending.*/
 
 		$element = $xml->createElement("ask_user_for_upload", true);
-		$diagnostics->appendChild($element);
+		$breakpad->appendChild($element);
 
 		$options->appendChild($breakpad);
 
