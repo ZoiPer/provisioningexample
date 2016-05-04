@@ -772,39 +772,6 @@
 
 		$account->appendChild($codecs);
 
-		$accounts->appendChild($account);
-
-		$options->appendChild($accounts);
-
-		/* Implemented in XML Configuration v1.5
-
-		Dianostics contains all the settings for debugging.*/
-
-		$diagnostics = $xml->createElement("diagnostics");
-
-		/* Possible values: true, false
-
-		Optional enables the debug logging into a file.*/
-
-		$element = $xml->createElement("enable_debug_log", false);
-		$diagnostics->appendChild($element);
-
-		/* Possible values: true, false
-
-		Optional enables the extended crash dump file. Available only on Windows.*/
-
-		$element = $xml->createElement("enable_extra_dmp", false);
-		$diagnostics->appendChild($element);
-
-		/* Possible values: true, false
-
-		Optional enables the audio log files.*/
-
-		$element = $xml->createElement("enable_audio_debug", false);
-		$diagnostics->appendChild($element);
-
-		$options->appendChild($diagnostics);
-
 		/* Implemented in XML configuration v1.11
 
 		ZRTP holds the ZRTP related settings */
@@ -1010,6 +977,39 @@
 		$zrtp->appendChild($sas_encodings);
 
 		$options->appendChild($zrtp);
+
+		$accounts->appendChild($account);
+
+		$options->appendChild($accounts);
+
+		/* Implemented in XML Configuration v1.5
+
+		Dianostics contains all the settings for debugging.*/
+
+		$diagnostics = $xml->createElement("diagnostics");
+
+		/* Possible values: true, false
+
+		Optional enables the debug logging into a file.*/
+
+		$element = $xml->createElement("enable_debug_log", false);
+		$diagnostics->appendChild($element);
+
+		/* Possible values: true, false
+
+		Optional enables the extended crash dump file. Available only on Windows.*/
+
+		$element = $xml->createElement("enable_extra_dmp", false);
+		$diagnostics->appendChild($element);
+
+		/* Possible values: true, false
+
+		Optional enables the audio log files.*/
+
+		$element = $xml->createElement("enable_audio_debug", false);
+		$diagnostics->appendChild($element);
+
+		$options->appendChild($diagnostics);
 
 		$xml->appendChild($options);
 
