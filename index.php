@@ -367,7 +367,7 @@
 		will not wait for the full period to refresh the registration. It will
 		try to refresh it after 90% of the negotiated time has elapsed.*/
 
-		$element = $xml->createElement("registration_mode", "default");
+		$element = $xml->createElement("reregistration_mode", "default");
 		$account->appendChild($element);
 
 		/* Possible values: unsigned long
