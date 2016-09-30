@@ -32,7 +32,11 @@
 
 		// 2. If the credentials are correct and the version is 1.0 send the following config
 
+
 		$xml = new DOMDocument("1.0", "UTF-8");
+
+		$xml->preserveWhiteSpace = false;
+		$xml->formatOutput = true;
 
 		$options = $xml->createElement("options");
 
@@ -100,10 +104,9 @@
 
 		$xml->appendChild($options);
 
-		$xml->preserveWhiteSpace = false;
-		$xml->formatOutput = true;
-
 		echo $xml->saveXML($xml, LIBXML_NOEMPTYTAG);
+
+
 	} 
 	
 	elseif (ver_to_int($version) > ver_to_int("1.0") ) {
@@ -117,13 +120,16 @@
 
 		$xml = new DOMDocument("1.0", "UTF-8");
 
+		$xml->preserveWhiteSpace = false;
+		$xml->formatOutput = true;
+
 		$options = $xml->createElement("options");
 
 		/* Possible values: string,
 
 		Version of the provisioning XML.*/
 
-		$element = $xml->createElement("prov_version", "1.12");
+		$element = $xml->createElement("prov_version", "1.13");
 		$options->appendChild($element);
 
 		/* Possible values: string,
@@ -1066,10 +1072,9 @@
 
 		$xml->appendChild($options);
 
-		$xml->preserveWhiteSpace = false;
-		$xml->formatOutput = true;
+                echo $xml->saveXML($xml, LIBXML_NOEMPTYTAG);
 
-		echo $xml->saveXML($xml, LIBXML_NOEMPTYTAG);
+
 	} else {
 		error("Unknown version");
 	}
