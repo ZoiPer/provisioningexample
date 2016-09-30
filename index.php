@@ -100,6 +100,9 @@
 
 		$xml->appendChild($options);
 
+		$xml->preserveWhiteSpace = false;
+		$xml->formatOutput = true;
+
 		echo $xml->saveXML($xml, LIBXML_NOEMPTYTAG);
 	} 
 	
@@ -1062,6 +1065,9 @@
 		$options->appendChild($breakpad);
 
 		$xml->appendChild($options);
+
+		$xml->preserveWhiteSpace = false;
+		$xml->formatOutput = true;
 
 		echo $xml->saveXML($xml, LIBXML_NOEMPTYTAG);
 	} else {
