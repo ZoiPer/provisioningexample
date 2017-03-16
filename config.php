@@ -24,7 +24,7 @@ define("SIP_DOMAIN", "sip.example.com");
 | 34 | Opus Narrow       | 6000      | 24000     | 15000     | 1 | 1 |
 | 35 | Opus Wide         | 6000      | 28000     | 20000     | 1 | 1 |
 | 36 | Opus Super        | 6000      | 32000     | 30000     | 1 | 1 |
-| 34 | Opus Narrow       | 6000      | 40000     | 40000     | 1 | 1 |
+| 37 | Opus Full         | 6000      | 40000     | 40000     | 1 | 1 |
 +----+-------------------+-----------+-----------+-----------+---+---+
 
 Please note that the codecs listed below are just for an example. You would have to add your codecs and settings.

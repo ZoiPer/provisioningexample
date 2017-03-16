@@ -129,7 +129,7 @@
 
 		Version of the provisioning XML.*/
 
-		$element = $xml->createElement("prov_version", "1.13");
+		$element = $xml->createElement("prov_version", "1.14");
 		$options->appendChild($element);
 
 		/* Possible values: string,
@@ -220,7 +220,7 @@
 
 		Optional voice mail transfer extension.*/
 
-		$element = $xml->createElement("voicemaile_transfer_extension", "");
+		$element = $xml->createElement("voicemail_transfer_extension", "");
 		$account->appendChild($element);
 
 		/* Possible values: true, false ; 
@@ -446,7 +446,7 @@
 
 		Optional display name.*/
 
-		$element = $xml->createElement("SIP_callerid", "");
+		$element = $xml->createElement("SIP_callerId", "");
 		$account->appendChild($element);
 
 		/* Possible values: true, false
@@ -455,7 +455,7 @@
 		there is a NAT between the user and the server. It also helps for normal
 		unfirewalled TCP and TLS connections (highly recommended for these two protocols).*/
 
-		$element = $xml->createElement("SIP_use_rport", true);
+		$element = $xml->createElement("SIP_use_rport", false);
 		$account->appendChild($element);
 
 		/* Possible values: true, false
@@ -542,7 +542,7 @@
 
 		The Jabber Id of the user.*/
 
-		$element = $xml->createElement("XMPP_Jid", "");
+		$element = $xml->createElement("XMPP_JId", "");
 		$account->appendChild($element);
 
 		/* Possible values: string
@@ -622,7 +622,7 @@
 
 		Optional the display name.*/
 
-		$element = $xml->createElement("IAX2_callerid", "");
+		$element = $xml->createElement("IAX2_callerId", "");
 		$account->appendChild($element);
 
 		/*Possible values: string
@@ -638,18 +638,36 @@
 
 		$element = $xml->createElement("IAX2_dtmf_style", "");
 		$account->appendChild($element);
-
+		
+		/* Implemented in XML Configuration v1.14.
+		 
+		Possible values: true, false
+		
+		Enable file transfer for the user.*/
+		
+		$element = $xml->createElement("enable_file_transfer", "");
+		$account->appendChild($element);
+		
+		/* Implemented in XML Configuration v1.14.
+		
+		Possible values: true, false
+		
+		Enable video fmtp for the user.*/
+		
+		$element = $xml->createElement("enable_video_fmtp", "");
+		$account->appendChild($element);
+		
 		/*msrp holds msrp related settings.*/
 
 		$msrp = $xml->createElement("msrp");
 
-		/* Implemented in XML Configuration v1.8
+		/* Implemented in XML Configuration v1.8. Changed in v1.14.
 
 		Possible values: true, false
 
 		Enable msrp for the user.*/
 
-		$element = $xml->createElement("enable_msrp", true);
+		$element = $xml->createElement("enabled", false);
 		$msrp->appendChild($element);
 
 		/* Implemented in XML Configuration v1.8
@@ -658,7 +676,7 @@
 
 		Force user to use msrp for chat messages.*/
 
-		$element = $xml->createElement("force_msrp_for_chat", true);
+		$element = $xml->createElement("force_msrp_for_chat", false);
 		$msrp->appendChild($element);
 
 		/* Implemented in XML Configuration v1.9
@@ -667,16 +685,16 @@
 
 		Enables TLS for the MSRP.*/
 
-		$element = $xml->createElement("enable_tls", true);
+		$element = $xml->createElement("enable_tls", false);
 		$msrp->appendChild($element);
 
-		/* Implemented in XML Configuration v1.8
+		/* Implemented in XML Configuration v1.8. Changed in v1.14
 
 		Possible values: true, false
 
 		Enable msrp relay for the user.*/
 
-		$element = $xml->createElement("enable_msrp_relay", true);
+		$element = $xml->createElement("enable_relay", false);
 		$msrp->appendChild($element);
 
 		/* Possible values: string
@@ -934,7 +952,9 @@
 
 		$key_agreement_methods = $xml->createElement("key_agreement_methods");
 
-		$key_agreement_method = $xml->createElement("key_agreement_method");
+		/* Changed in XML Configuration v1.14 */
+		
+		$key_agreement_method = $xml->createElement("key_agreement");
 
 		/* Possible values: DH2K, EC25, DH3K, EC38
 
