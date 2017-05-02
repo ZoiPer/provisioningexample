@@ -16,6 +16,7 @@ v=Version
 
 The server should reply with account configuration in XML format. An example XML looks like this: 
 
+```
 <options>
 	<!--
 		Possible values: string
@@ -928,6 +929,7 @@ The server should reply with account configuration in XML format. An example XML
   </breakpad>
 
 </options>
+```
 **************************
 Copyrights (c) Zoiper 2016
 **************************
