@@ -8,11 +8,11 @@ This automatic configuration can be done by using an HTTP/S server.
 Once an end-user launches the application a pop-up window will appear to ask the end-user to enter his username and password. 
 After the end-user fills in the username and password and clicks on "Ok" an HTTP/s Get request will be sent to the provsioning server. 
 
-https://www.example.com/id.php?u=$USERNAME&p=$PASSWORD&v=$VERSION 
+https://www.example.com/id.php?username=[user]&password=[pass]&version=[version] 
 
-u=Username 
-p=Password 
-v=Version 
+username=[user]  -  the provisioning username 
+password=[password]  -  the provisioning password 
+version=[version]  -  the provisioning version 
 
 The server should reply with account configuration in XML format. An example XML looks like this: 
 
