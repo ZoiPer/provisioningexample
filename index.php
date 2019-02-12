@@ -6,18 +6,18 @@
 	require("functions.php");
 
 
-	if (!isset($_GET["u"])) 
+	if (!isset($_GET["username"])) 
 		error('No username');
-	$username = $_GET["u"];
+	$username = $_GET["username"];
 	
-	if (!isset($_GET["p"])) 
+	if (!isset($_GET["password"])) 
 		error('No password');
-	$password = $_GET["p"];
+	$password = $_GET["password"];
 	
-	if (!isset($_GET["v"]))  {
+	if (!isset($_GET["version"]))  {
 		$version = '1.0';
 	} else {
-		$version = $_GET["v"];
+		$version = $_GET["version"];
 	}
 
 
