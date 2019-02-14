@@ -23,7 +23,7 @@ The server should reply with account configuration in XML format. An example XML
 
 		Version of the provisioning XML
 	-->
-	<prov_version>1.13</prov_version>
+	<prov_version>1.14</prov_version>
 
 	<!--
 		Possible values: string
