@@ -10,8 +10,8 @@ After the end-user fills in the username and password and clicks on "Ok" an HTTP
 
 https://www.example.com/id.php?username=[user]&password=[pass]&version=[version] 
 
-username=[user]  -  the provisioning username 
-password=[password]  -  the provisioning password 
+username=[user]  -  the provisioning username
+password=[password]  -  the provisioning password
 version=[version]  -  the provisioning version 
 
 The server should reply with account configuration in XML format. An example XML looks like this: 
