@@ -254,7 +254,7 @@ The server should reply with account configuration in XML format. An example XML
 			<quality_rating_url>https://example.com/script.php?id=${CALL_IDENTIFIER}&amp;rating=${RATING}</quality_rating_url>
 
 			<!--
-				Possible values: SIP, IAX2, XMPP, RTSP
+				Possible values: SIP, IAX2, RTSP
 
 				Protocol. Controls the presence of configuration
 				blocks: SIP, IAX2
@@ -434,34 +434,6 @@ The server should reply with account configuration in XML format. An example XML
 				Optional enable reg events.
 			-->
 			<SIP_use_reg_event>false</SIP_use_reg_event>
-
-			<!--
-				Possible values: string
-
-				The Jabber Id of the user
-			-->
-      <XMPP_JId>cabob@server.com</XMPP_JId>
-
-			<!--
-				Possible values: string
-
-				Optional full name of the XMPP user
-			-->
-      <XMPP_name>Alexander Savov</XMPP_name>
-
-			<!--
-				Possible values: string
-
-				Optional XMPP connect server
-			-->
-      <XMPP_server>server.com</XMPP_server>
-
-			<!--
-				Possible values: true, false
-
-				It governs the usage of the legacy TLS mode for XMPP
-			-->
-      <XMPP_legacy_tls>false</XMPP_legacy_tls>
 
 			<!--
 				stun holds stun related settings.

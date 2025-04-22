@@ -362,7 +362,7 @@
 		$element = $xml->createElement("quality_rating_url", xml_url ('https://example.com/script.php?id=${CALL_IDENTIFIER}&rating=${RATING}'));
 		$account->appendChild($element);
 
-		/* Possible values: SIP, IAX2, XMPP, RTSP
+		/* Possible values: SIP, IAX2, RTSP
 
 		Protocol. Controls the presence of configuration blocks: SIP, IAX2*/
 
@@ -536,34 +536,6 @@
 		Optional, enables reg events.*/
 
 		$element = $xml->createElement("SIP_use_reg_event", false);
-		$account->appendChild($element);
-
-		/* Possible values: string
-
-		The Jabber Id of the user.*/
-
-		$element = $xml->createElement("XMPP_JId", "");
-		$account->appendChild($element);
-
-		/* Possible values: string
-
-		Optional full name of the XMPP user.*/
-
-		$element = $xml->createElement("XMPP_name", "");
-		$account->appendChild($element);
-
-		/* Possible values: string
-
-		Optional XMPP connect server.*/
-
-		$element = $xml->createElement("XMPP_server", "");
-		$account->appendChild($element);
-
-		/* Possible values: true, false
-
-		It governs the usage of the legacy TLS mode for XMPP.*/
-
-		$element = $xml->createElement("XMPP_legacy_tls", false);
 		$account->appendChild($element);
 
 		// stun holds stun related settings.
